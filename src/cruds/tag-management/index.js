@@ -94,9 +94,9 @@ function CategoryManagement() {
 
   const clickDeleteHandler = async (e, id) => {
     try {
-      if (!confirm("Are you sure you want to delete this tag?")) {
-        e.nativeEvent.stopImmediatePropagation();
-      } else {
+      // if (!confirm("Are you sure you want to delete this tag?")) {
+      //   e.nativeEvent.stopImmediatePropagation();
+      // } else {
         await CrudService.deleteTag(id);
         // the delete does not send a response
         // so I need to get again the tags to set it and this way the table gets updated -> it goes to the useEffect with data dependecy
@@ -106,7 +106,7 @@ function CategoryManagement() {
           value: true,
           text: "The tag has been successfully deleted",
         });
-      }
+      // }
     } catch (err) {
       // it sends error is the category is associated with an item
       console.error(err);

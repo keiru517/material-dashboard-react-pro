@@ -58,6 +58,7 @@
     "react-dom": "^18.0.0",
     "react-flatpickr": "3.10.7",
     "react-github-btn": "1.2.1",
+    "react-google-login": "^5.2.2",
     "react-images-viewer": "1.7.1",
     "react-input-color": "^4.0.0",
     "react-meta-tags": "^1.0.1",

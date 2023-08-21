@@ -36,6 +36,8 @@ import IllustrationLayout from "layouts/authentication/components/IllustrationLa
 // Image
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
+import GoogleLogin from '../google-login';
+
 function Login() {
   const authContext = useContext(AuthContext);
   const [rememberMe, setRememberMe] = useState(false);
@@ -201,6 +203,7 @@ function Login() {
           <MDButton variant="gradient" color="info" size="large" fullWidth type="submit">
             sign in
           </MDButton>
+          <GoogleLogin />
         </MDBox>
         <MDBox mt={3} mb={1} textAlign="center">
           <MDTypography variant="button" color="text">
