@@ -1,7 +1,7 @@
 import Axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL;
-Axios.defaults.baseURL = API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
+Axios.defaults.baseURL = "https://api.directual.com/good/api/v5/data/userloginregistration/post?appID=8e1c6843-f245-4c98-b5be-b7e6862ca697";
 
 export class HttpService {
   _axios = Axios.create();
