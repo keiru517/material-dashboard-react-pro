@@ -68,6 +68,7 @@ function Analytics() {
   );
 
   return (
+    
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox py={3}>
