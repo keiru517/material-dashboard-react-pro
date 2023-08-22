@@ -87,7 +87,8 @@ function Login() {
 
     try {
       const response = await AuthService.login(myData);
-      authContext.login(response.access_token, response.refresh_token);
+      authContext.login("fake_token", "fake_token");
+      // authContext.login(response.access_token, response.refresh_token);
     } catch (res) {
       if (res.hasOwnProperty("message")) {
         setErrors({ ...errors, credentialsErros: true, textError: res.message });
