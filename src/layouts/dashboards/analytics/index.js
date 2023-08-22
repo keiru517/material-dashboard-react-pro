@@ -67,11 +67,12 @@ function Analytics() {
     </>
   );
 
+
   return (
     
     <DashboardLayout>
       <DashboardNavbar />
-      <MDBox py={3}>
+      {/* <MDBox py={3}>
         <Grid container>
           <SalesByCountry />
         </Grid>
@@ -219,7 +220,7 @@ function Analytics() {
             </Grid>
           </Grid>
         </MDBox>
-      </MDBox>
+      </MDBox> */}
       <Footer />
     </DashboardLayout>
   );
