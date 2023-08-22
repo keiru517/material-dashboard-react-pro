@@ -8,8 +8,6 @@ import React from 'react';
 
 const clientId =
 '564029370783-uml2he9fv7jq7ofjoq7lfc1uu66298nn.apps.googleusercontent.com'
-  // '527122128300-uhqsfmmroea78ml6l4omnemeeudo6q6i.apps.googleusercontent.com';
-  // "707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com";
 
 function Login() {
   const authContext = useContext(AuthContext);
