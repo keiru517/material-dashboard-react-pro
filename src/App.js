@@ -16,7 +16,13 @@ Coded by www.creative-tim.com
 import { useState, useEffect, useMemo, useContext } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 
 import { setupAxiosInterceptors } from "services/interceptor";
 
@@ -51,7 +57,12 @@ import routes from "routes";
 import crudRoutes from "crud.routes";
 
 // Material Dashboard 2 PRO React contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator, AuthContext } from "context";
+import {
+  useMaterialUIController,
+  setMiniSidenav,
+  setOpenConfigurator,
+  AuthContext,
+} from "context";
 
 import { getPermissions } from "config/Permissions";
 
@@ -94,8 +105,9 @@ export default function App({ ability }) {
   // if the token expired or other errors it logs out and goes to the login page
   const navigate = useNavigate();
   setupAxiosInterceptors(() => {
-    authContext.logout();
-    navigate("/auth/login");
+    // authContext.logout();
+    // console.log("Dog baby max")
+    // navigate("/auth/login");
   });
 
   // Cache for the rtl
@@ -125,7 +137,8 @@ export default function App({ ability }) {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const handleConfiguratorOpen = () =>
+    setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting the dir attribute for the body element
   useEffect(() => {
@@ -149,14 +162,18 @@ export default function App({ ability }) {
       });
       const rules = await getPermissions(id);
       ability.update(rules);
-    })();
+    })()
+      .then(() => {})
+      .catch(() => {});
   }, [authContext.isAuthenticated]);
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
       if (route.key === "user-name") {
         route.name = userDetails.name;
-        route.icon = <MDAvatar src={userDetails.image} alt="Brooklyn Alice" size="sm" />;
+        route.icon = (
+          <MDAvatar src={userDetails.image} alt="Brooklyn Alice" size="sm" />
+        );
       }
       if (route.collapse) {
         return getRoutes(route.collapse);
@@ -295,7 +312,11 @@ export default function App({ ability }) {
               <>
                 <Sidenav
                   color={sidenavColor}
-                  brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+                  brand={
+                    (transparentSidenav && !darkMode) || whiteSidenav
+                      ? brandDark
+                      : brandWhite
+                  }
                   brandName="Material Dashboard PRO"
                   routes={routes}
                   onMouseEnter={handleOnMouseEnter}
@@ -309,7 +330,10 @@ export default function App({ ability }) {
             <Routes>
               <Route path="/auth/login" element={<Login />} />
               {getRoutes(routes)}
-              <Route path="*" element={<Navigate to="/dashboards/analytics" />} />
+              <Route
+                path="*"
+                element={<Navigate to="/dashboards/analytics" />}
+              />
             </Routes>
           </ThemeProvider>
         </CacheProvider>
@@ -320,7 +344,11 @@ export default function App({ ability }) {
             <>
               <Sidenav
                 color={sidenavColor}
-                brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+                brand={
+                  (transparentSidenav && !darkMode) || whiteSidenav
+                    ? brandDark
+                    : brandWhite
+                }
                 brandName="Material Dashboard PRO"
                 routes={routes}
                 onMouseEnter={handleOnMouseEnter}
