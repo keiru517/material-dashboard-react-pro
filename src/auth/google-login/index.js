@@ -20,6 +20,7 @@ function Login() {
     //   `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     // );
     // refreshTokenSetup(res);
+
     authContext.login(res.tokenObj.access_token);
   };
 

@@ -86,8 +86,8 @@ function Login() {
     };
 
     try {
-      // const response = await AuthService.login(myData);
-      authContext.login("asdf");
+      const response = await AuthService.login(myData);
+      authContext.login(response.access_token, response.refresh_token);
     } catch (res) {
       if (res.hasOwnProperty("message")) {
         setErrors({ ...errors, credentialsErros: true, textError: res.message });
